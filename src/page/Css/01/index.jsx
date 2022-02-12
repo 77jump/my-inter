@@ -1,5 +1,5 @@
 // @ts-ignore
-import md from '@/notes/html/01.md';
+import md from '@/notes/css/01.md';
 // @ts-ignore
 import Contain from '@/page/components/Contain';
 
