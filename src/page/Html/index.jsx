@@ -47,7 +47,6 @@ export default () => {
             .then(text => setMarkdown(text))
     }, [])
 
-    console.log(list,'list');
     return (
         <div className="html-contain">
             <Button type="primary" onClick={showDrawer} className="openbutton">
