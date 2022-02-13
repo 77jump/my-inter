@@ -28,7 +28,8 @@ function Nav() {
                     <Menu.Item key="css2">思考题</Menu.Item>
                 </SubMenu>
                 <SubMenu key="sub3" icon={<MailOutlined style={{ marginRight: '30px' }} />} title="JavaScript">
-                    <Menu.Item key="javascript">常见考点</Menu.Item>
+                    <Menu.Item key="js1">常见考点</Menu.Item>
+                    <Menu.Item key="js2">思考题</Menu.Item>
                 </SubMenu>
                 <SubMenu key="sub4" icon={<MailOutlined style={{ marginRight: '30px' }} />} title="Http">
                     <Menu.Item key="http">常见考点</Menu.Item>

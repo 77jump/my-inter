@@ -1,7 +1,6 @@
 // @ts-nocheck
 import { useEffect, useState } from 'react';
 // @ts-ignore
-// import md from '@/notes/html/01.md';
 import { Tree, Drawer, Button } from 'antd';
 import { DatabaseTwoTone } from '@ant-design/icons';
 import Markdown from 'react-markdown';
@@ -16,13 +15,16 @@ let list = [];
 export default (props) => {
     const { md } = props;
     const [markdown, setMarkdown] = useState('');
-    const [sign, setSign] = useState(true);
     const [visible, setVisible] = useState(false); // 导航栏抽屉
 
     useEffect(() => {
         fetch(md)
             .then(res => res.text())
             .then(text => setMarkdown(text))
+        return () => {
+            // setList([]);
+            list = [];
+        }
     }, [])
 
     const showDrawer = () => {
@@ -30,6 +32,7 @@ export default (props) => {
       };
       const onClose = () => {
           setVisible(false);
+        //   setList([]);
           list = [];
       };
     const components = {
@@ -42,11 +45,11 @@ export default (props) => {
             )
         },
         h3(props) {
-            sign && list[list.length - 1].children.push({ title: props.children[0], key: nanoid() });
+            list[list.length - 1].children.push({ title: props.children[0], key: nanoid() });
             return <h3 style={ { color: 'red' } } { ...props } /> 
         },
         h2(props) {
-            sign && list.push({ title: props.children[0], key: nanoid(), children: [] });
+            list.push({ title: props.children[0], key: nanoid(), children: [] });
             return <h2 { ...props } />
         }
     }
