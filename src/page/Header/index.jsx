@@ -45,6 +45,12 @@ export default () => {
                 >
                     <p>智力题</p>
                 </a>
+                <a
+                    target="_blank"
+                    href="https://github.com/haizlin/fe-interview/issues?page=1&q=is%3Aissue+is%3Aopen"
+                >
+                    <p>每日三合一</p>
+                </a>
                 <p>
                     vue项目编写
                 </p>
