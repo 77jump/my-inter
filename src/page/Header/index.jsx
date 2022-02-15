@@ -32,7 +32,12 @@ export default () => {
                 onCancel={() => { setVisible(false) }}
             >
                 <p>面经模板*2</p>
-                <p>leetcode50道速记</p>
+                <a
+                    target="_blank"
+                    href="https://books.halfrost.com/leetcode/"
+                >
+                    <p>leetcode50道速记</p>
+                </a>
                 <a
                     target="_blank"
                     href="https://github.com/nlpjoe/Coding4Interviews/tree/master/%E5%89%91%E6%8C%87offer"
@@ -51,10 +56,18 @@ export default () => {
                 >
                     <p>每日三合一</p>
                 </a>
-                <p>
-                    vue项目编写
-                </p>
-                <p>计算机网络</p>
+                <a
+                    target="_blank"
+                    href="https://www.bilibili.com/video/BV1Vf4y1T7bw?p=5"
+                >
+                    <p>vue项目</p>
+                </a>
+                <a
+                    target="_blank"
+                    href="https://www.bilibili.com/video/BV1c4411d7jb?p=1"
+                >
+                    <p>计算机网络</p>
+                </a>
             </Modal>
         </div>
     )
