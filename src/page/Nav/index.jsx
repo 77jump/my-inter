@@ -1,11 +1,13 @@
-import { Menu } from 'antd';
+import { Collapse, Menu } from 'antd';
 import { MailOutlined } from '@ant-design/icons';
+import {useState} from 'react'
 import { useHistory, withRouter } from "react-router-dom";
 import './index.less';
 
 const { SubMenu } = Menu;
 function Nav() {
     let history = useHistory();
+    let [visible, setVisible] = useState(false);
 
     const HandleClick = (e) => {
         history.push(`/my-inter/${e.key}`);
@@ -13,7 +15,13 @@ function Nav() {
 
     return (
         <div className="contain">
-            <Menu
+            {!visible && 
+            <button onClick={()=>setVisible(true)}>点击展开</button>
+            }
+                        {visible && 
+            <button onClick={()=>setVisible(false)}>点击关闭</button>
+            }
+            {visible&&<Menu
                 onClick={HandleClick}
                 style={{ width: 256, height: '100%' }}
                 defaultSelectedKeys={['1']}
@@ -47,6 +55,7 @@ function Nav() {
                     <Menu.Item key="optimization">常见考点</Menu.Item>
                 </SubMenu>
             </Menu>
+            }
         </div>
     )
 }
